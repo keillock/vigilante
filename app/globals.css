@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Eliminar cualquier margen o padding predeterminado del body y html */
 html, body {
   margin: 0;
