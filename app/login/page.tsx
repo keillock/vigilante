@@ -6,13 +6,33 @@ import Link from "next/link";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && password) {
-      alert("Inicio de sesión exitoso");
+    let valid = true;
+
+    // Validación del correo
+    if (!email.includes("@")) {
+      setEmailError("Por favor, ingresa un correo válido.");
+      valid = false;
     } else {
-      alert("Por favor, completa todos los campos.");
+      setEmailError("");
+    }
+
+    // Validación de la contraseña
+    if (!password) {
+      setPasswordError("Por favor, ingresa una contraseña.");
+      valid = false;
+    } else {
+      setPasswordError("");
+    }
+
+    if (valid) {
+      alert("Inicio de sesión exitoso");
+      // Redirigir a la página de inicio
+      window.location.href = "/home";
     }
   };
 
@@ -24,20 +44,34 @@ const Login = () => {
         Bienvenido. Ingresa tus credenciales.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-80">
-        <input
-          type="email"
-          placeholder="Correo"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="p-2 border rounded-md"
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="p-2 border rounded-md"
-        />
+        <div>
+          <input
+            type="text"
+            placeholder="Correo"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={`p-2 border rounded-md w-full ${
+              emailError ? "border-red-500" : ""
+            }`}
+          />
+          {emailError && (
+            <p className="text-red-500 text-sm mt-1">{emailError}</p>
+          )}
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={`p-2 border rounded-md w-full ${
+              passwordError ? "border-red-500" : ""
+            }`}
+          />
+          {passwordError && (
+            <p className="text-red-500 text-sm mt-1">{passwordError}</p>
+          )}
+        </div>
         <Link
           href="/forgot"
           className="text-orange-500 hover:underline text-center text-sm mt-2"
@@ -51,10 +85,12 @@ const Login = () => {
           Iniciar Sesión
         </button>
       </form>
-      <button className="flex items-center justify-center gap-2 mt-4 py-2 px-4 border rounded-md">
-        <img src="/google-icon.svg" alt="Google Logo" className="w-5 h-5" />
-        Continuar con Google
-      </button>
+      <button
+  className="flex items-center justify-center gap-2 mt-6 w-80 py-2 bg-white border border-gray-300 rounded-md shadow-md hover:shadow-lg hover:border-gray-400 transition-all"
+>
+  <img src="/google.svg" alt="Google Logo" className="w-5 h-5" />
+  <span className="text-gray-700 font-medium">Continuar con Google</span>
+</button>
       <p className="mt-6 text-sm">
         ¿No tienes una cuenta?{" "}
         <Link href="/register" className="text-orange-500 hover:underline">
