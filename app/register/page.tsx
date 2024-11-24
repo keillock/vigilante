@@ -80,7 +80,7 @@ const Register = () => {
         </div>
         <div>
           <input
-            type="email"
+            
             placeholder="Correo*"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
