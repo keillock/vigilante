@@ -30,7 +30,7 @@ const Login = () => {
     }
 
     if (valid) {
-      alert("Inicio de sesión exitoso");
+      
       // Redirigir a la página de inicio
       window.location.href = "/home";
     }
