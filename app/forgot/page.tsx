@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Key } from "phosphor-react"; // Importamos el ícono de llave
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +22,7 @@ const ForgotPassword = () => {
     alt="Background Grid"
     className="absolute top-0 left-0 w-full h-full object-cover -z-10"
   />
-  <Key size={48} color="#F97316" weight="fill" className="mb-4 bg-white p-3 rounded-md shadow-md" />
+  
   <h1 className="text-2xl font-bold mb-2">¿Olvidaste tu Contraseña?</h1>
   <p className="text-gray-500 mb-6">
     No te preocupes. Puedes recuperar tu cuenta.
