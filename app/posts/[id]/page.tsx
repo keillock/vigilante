@@ -3,7 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import { CaretLeft, DotsThree, DotsThreeVertical } from "phosphor-react";
+import { CaretLeft, DotsThreeVertical } from "phosphor-react";
 
 const PostDetail: React.FC = () => {
   const router = useRouter();
