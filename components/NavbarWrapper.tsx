@@ -1,16 +1,23 @@
 "use client";
 
+import React from "react";
 import { usePathname } from "next/navigation";
-import Navbar from "./Navbar";
+import Navbar from "@/components/Navbar";
 
-const NavbarWrapper = () => {
+const NavbarWrapper: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const pathname = usePathname();
 
-  // Define las paginas donde no saldrá la navbar pueeee
-  const hideNavbarRoutes = ["/login", "/register", "/forgot"];
-  const showNavbar = !hideNavbarRoutes.includes(pathname);
+  const excludePaths = ["/login", "/register", "/forgot", "/splash"];
+  const shouldHideNavbar = excludePaths.includes(pathname);
 
-  return showNavbar ? <Navbar /> : null;
+  return (
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">{children}</div>
+      {!shouldHideNavbar && <Navbar />}
+    </div>
+  );
 };
 
 export default NavbarWrapper;
