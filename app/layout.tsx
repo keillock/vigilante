@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import NavbarWrapper from "../components/NavbarWrapper";
 import "./globals.css";
 
 // Configuración de fuentes locales
@@ -28,12 +29,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-  <link rel="icon" href="/favicon.png?v=2" type="image/png" />
-</head>
+        <link rel="icon" href="/favicon.png?v=2" type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <NavbarWrapper />
       </body>
     </html>
   );
