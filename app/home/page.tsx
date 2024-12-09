@@ -24,8 +24,8 @@ const posts = [
   },
   {
     id: "3",
-    imageSrc: "https://scontent.ftgu1-3.fna.fbcdn.net/v/t39.30808-6/468215896_122177643716161398_3815249929707379810_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=mGAcpqnexvIQ7kNvgHVf8-I&_nc_zt=23&_nc_ht=scontent.ftgu1-3.fna&_nc_gid=AfldhH0_2BfzkZn6kUJVF3F&oh=00_AYBf6Cb19gyhnNQ24sda1RV_M3Pr6G15f_RHeZ5TqzAttw&oe=67530283",
-    title: "Asamblea General",
+    imageSrc: "https://www.mp.hn/wp-content/uploads/2024/03/photo1709321168-e1709324108450-768x476.jpeg",
+    title: "Asamblea General",  
     description:
       "La asamblea general de vecinos se llevará a cabo este sábado a las 6 PM en el salón comunitario.",
     tag: "Evento Comunitario",
