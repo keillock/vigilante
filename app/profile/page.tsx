@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { DotsThreeVertical, Star, UserPlus } from "phosphor-react"; // Import Phosphor icon
+import { DotsThreeVertical, UserPlus } from "phosphor-react"; // Import Phosphor icon
 import Post from "@/components/Post"; // Reuse the Post component
 
 const posts = [
