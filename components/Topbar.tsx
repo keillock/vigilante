@@ -10,11 +10,14 @@ import {
   Gear,
   UserCircle,
 } from "phosphor-react";
+import Link from "next/link";
 
 const Topbar: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
+  const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
     <>
@@ -42,53 +45,38 @@ const Topbar: React.FC = () => {
           {/* Main Links */}
           <ul className="space-y-4">
             <li>
-              <a
-                href="/home"
-                className="flex items-center gap-2 text-gray-700"
-              >
+              <Link href="/home" onClick={closeSidebar} className="flex items-center gap-2 text-gray-700">
                 <House size={20} color="#000" />
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/community"
-                className="flex items-center gap-2 text-gray-700"
-              >
+              <Link href="/community" onClick={closeSidebar} className="flex items-center gap-2 text-gray-700">
                 <Users size={20} color="#000" />
                 Grupos
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/messages"
-                className="flex items-center gap-2 text-gray-700"
-              >
+              <Link href="/messages" onClick={closeSidebar} className="flex items-center gap-2 text-gray-700">
                 <PaperPlaneTilt size={20} color="#000" />
                 Mensajes
-              </a>
+              </Link>
             </li>
           </ul>
           <hr className="my-4" />
           {/* Support & Settings */}
           <ul className="space-y-4">
             <li>
-              <a
-                href="/support"
-                className="flex items-center gap-2 text-gray-700"
-              >
+              <Link href="/support" onClick={closeSidebar} className="flex items-center gap-2 text-gray-700">
                 <Lifebuoy size={20} color="#000" />
                 Soporte
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/settings"
-                className="flex items-center gap-2 text-gray-700"
-              >
+              <Link href="/settings" onClick={closeSidebar} className="flex items-center gap-2 text-gray-700">
                 <Gear size={20} color="#000" />
                 Ajustes
-              </a>
+              </Link>
             </li>
           </ul>
           {/* User Info */}
@@ -105,7 +93,7 @@ const Topbar: React.FC = () => {
       {/* Backdrop */}
       {isSidebarOpen && (
         <div
-          onClick={toggleSidebar}
+          onClick={closeSidebar}
           className="fixed inset-0 bg-black bg-opacity-50 z-30"
         ></div>
       )}
