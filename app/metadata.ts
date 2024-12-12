@@ -1,22 +1,27 @@
-// app/metadata.ts
 const metadata = {
     title: "Vigilante - App",
-    description: "Vigilante es la plataforma para mantenerte al tanto de tu comunidad.",
+    description: "Mantente informado sobre tu alrededor..",
     icons: {
-      icon: "/favicon.png",
+      icon: "favicon.png",
     },
     openGraph: {
       title: "Vigilante",
-      description: "La plataforma para mantenerte al tanto de tu comunidad.",
+      description: "Mantente informado sobre tu alrededor..",
       images: [
         {
-          url: "/VigilanteCover.png",
+          url: "VigilanteCover.png",
           width: 1200,
           height: 630,
           alt: "Vigilante Cover",
         },
       ],
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Vigilante",
+      description: "Mantente informado sobre tu alrededor..",
+      image: "/VigilanteCover.png",
     },
   };
   

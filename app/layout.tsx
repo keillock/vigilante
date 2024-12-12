@@ -35,13 +35,22 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta property="og:title" content={metadata.openGraph.title} />
-        <meta property="og:description" content={metadata.openGraph.description} />
-        <meta property="og:image" content={metadata.openGraph.images[0].url} />
-        <link rel="icon" href={metadata.icons.icon} />
-      </head>
+        
+  <title>{metadata.title}</title>
+  <meta name="description" content={metadata.description} />
+  <meta property="og:title" content={metadata.openGraph.title} />
+  <meta property="og:description" content={metadata.openGraph.description} />
+  <meta property="og:image" content={metadata.openGraph.images[0].url} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content={metadata.openGraph.type} />
+  <meta property="twitter:card" content={metadata.twitter.card} />
+  <meta property="twitter:title" content={metadata.twitter.title} />
+  <meta property="twitter:description" content={metadata.twitter.description} />
+  <meta property="twitter:image" content={metadata.twitter.image} />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+</head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
       >
