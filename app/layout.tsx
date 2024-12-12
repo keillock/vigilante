@@ -1,5 +1,6 @@
 "use client";
 
+import metadata from "@/app/metadata"; // Import the metadata
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
 import Topbar from "@/components/Topbar";
@@ -25,19 +26,7 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
 
-  // Define routes where the Topbar should be hidden
-  const hideTopbarRoutes = [
-    "/splash",
-    "/login",
-    "/register",
-    "/forgot",
-    "/settings",
-    "/settings/cuenta",
-    "/settings/notificaciones",
-    "/settings/seguridad",
-  ];
-
-  // Define routes where the Navbar should be hidden
+  const hideTopbarRoutes = ["/splash", "/login", "/register", "/forgot"];
   const hideNavbarRoutes = ["/splash", "/login", "/register", "/forgot"];
 
   const shouldHideTopbar = hideTopbarRoutes.includes(pathname);
@@ -46,15 +35,17 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/favicon.png?v=2" type="image/png" />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta property="og:description" content={metadata.openGraph.description} />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        <link rel="icon" href={metadata.icons.icon} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
       >
-        {/* Conditionally render the Topbar */}
         {!shouldHideTopbar && <Topbar />}
-
-        {/* Wrap content with NavbarWrapper unless Navbar is hidden */}
         <div className={`${!shouldHideTopbar ? "pt-14" : ""}`}>
           {shouldHideNavbar ? children : <NavbarWrapper>{children}</NavbarWrapper>}
         </div>
