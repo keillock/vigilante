@@ -1,19 +1,20 @@
 {
     "name": "Vigilante",
     "short_name": "Vigilante",
+    "description": "Mantente informado sobre tu alrededor.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#FFFFFF",
+    "background_color": "#ffffff",
     "theme_color": "#ED7600",
     "icons": [
       {
-        "src": "/favicon.png",
-        "sizes": "192x192",
+        "src": "/apple-touch-icon.png",
+        "sizes": "180x180",
         "type": "image/png"
       },
       {
-        "src": "/VigilanteCover.png",
-        "sizes": "512x512",
+        "src": "/favicon.png",
+        "sizes": "32x32",
         "type": "image/png"
       }
     ]
