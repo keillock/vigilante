@@ -56,7 +56,7 @@ const Home: React.FC = () => {
       {/* Floating Action Button */}
       <div className="fixed bottom-6 pb-20 right-6 z-20 ">
         <Link
-          href="/new-post/select-type"
+          href="/home/new-post/select-type"
           className="bg-orange-500 p-4 rounded-full  hover:bg-orange-600 flex items-center justify-center shadow-xl"
           aria-label="Nuevo Post"
         >
