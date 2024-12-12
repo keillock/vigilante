@@ -22,6 +22,34 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+input,
+textarea,
+select,
+button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ED7600; /* Highlight with your theme color */
+  box-shadow: 0 0 3px rgba(237, 118, 0, 0.6); /* Optional visual cue */
+}
+
+/* Fix scrolling issues and add proper behavior for iOS */
+html,
+body {
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  overscroll-behavior: contain; /* Prevent overscroll on iOS */
+}
+
+input:focus {
+  scroll-margin-top: 100px; /* Adjust if inputs are hidden under a fixed header */
+}
+
+
+
 /* Definir la fuente personalizada */
 @font-face {
   font-family: 'ObviouslyWideBold';

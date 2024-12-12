@@ -8,6 +8,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const handleInputClick = (event: React.MouseEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    event.currentTarget.focus();
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +52,7 @@ const Login = () => {
             type="text"
             placeholder="Correo"
             value={email}
+            onClick={handleInputClick}
             onChange={(e) => setEmail(e.target.value)}
             className={`p-2 border rounded-md w-full ${
               emailError ? "border-red-500" : ""
@@ -63,6 +67,7 @@ const Login = () => {
             type="password"
             placeholder="Contraseña"
             value={password}
+            onClick={handleInputClick}
             onChange={(e) => setPassword(e.target.value)}
             className={`p-2 border rounded-md w-full ${
               passwordError ? "border-red-500" : ""
